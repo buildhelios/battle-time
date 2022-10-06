@@ -24,7 +24,9 @@
         {
             "files": ["*.ts", "*.tsx"],
             "extends": ["plugin:@nrwl/nx/typescript"],
-            "rules": {}
+            "rules": {
+                "@next/next/no-img-element":"off"
+            }
         },
         {
             "files": ["*.js", "*.jsx"],
