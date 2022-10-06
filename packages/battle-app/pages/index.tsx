@@ -1,7 +1,27 @@
+import { apiBaseUrl, Question } from "@battle-time/common";
+import { useEffect } from "react";
 import { BarsIcon } from "../components/BarsIcon";
 import Logo from '../components/Logo';
 
 export function Index() {
+
+    useEffect(()=>{
+        let m=true;
+        (async ()=>{
+
+            const response=await fetch(`${apiBaseUrl}questions`);
+            if(!m){return;}
+
+            const questions:Question[]=await response.json();
+            if(!m){return;}
+
+            console.log('Questions',questions)
+        })();
+        return ()=>{
+            m=false;
+        }
+    },[])
+
     return (
         <div className="Index">
 

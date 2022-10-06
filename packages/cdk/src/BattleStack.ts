@@ -1,18 +1,50 @@
 import * as cdk from 'aws-cdk-lib';
-import * as s3 from 'aws-cdk-lib/aws-s3';
-// import * as ec2 from 'aws-cdk-lib/aws-ec2';
-// import * as efs from 'aws-cdk-lib/aws-efs';
-// import * as lambda from 'aws-cdk-lib/aws-lambda';
-// import * as s3Deployment from 'aws-cdk-lib/aws-s3-deployment';
-// import * as secrets from 'aws-cdk-lib/aws-secretsmanager';
+import * as iam from "aws-cdk-lib/aws-iam";
+import * as lambda from 'aws-cdk-lib/aws-lambda';
 import { Construct } from 'constructs';
 
 export class BattleStack extends cdk.Stack {
     constructor(scope: Construct, id: string, props?: cdk.StackProps) {
         super(scope, id, props);
 
-        new s3.Bucket(this, 'test', {
-            removalPolicy: cdk.RemovalPolicy.DESTROY,
-        });
+        this.createFunction('api',{
+            createPublicUrl:true
+        })
+
+
     }
+
+    createFunction(name: string, {
+        createPublicUrl,
+        ...props
+    }:Partial<lambda.FunctionProps> & AdditionalFuncOptions={}): lambda.Function {
+        const id = name + "-func";
+        const func = new lambda.Function(this, id, {
+            runtime: lambda.Runtime.NODEJS_14_X,
+            architecture: lambda.Architecture.ARM_64,
+            code: lambda.Code.fromAsset(`../../dist/packages/${id}`),
+            handler: `main.handler`,
+            ...props,
+        });
+
+        if(createPublicUrl){
+            const url = func.addFunctionUrl({
+                authType:lambda.FunctionUrlAuthType.NONE
+            });
+            url.grantInvokeUrl(new iam.AnyPrincipal());
+            new cdk.CfnOutput(this, "funcUrl00" + name, { value: url.url });
+        }
+
+        new cdk.CfnOutput(this, "funcName00" + name, { value: func.functionName });
+        return func;
+    }
+}
+
+
+interface AdditionalFuncOptions
+{
+    /**
+     * If true a public URL will be created for the function
+     */
+    createPublicUrl?:boolean;
 }
