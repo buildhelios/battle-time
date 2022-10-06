@@ -1,94 +1,55 @@
+# Battle Time 🥳
 
 
-# BattleTime
+## Assignment
+Your assignment is to build an onboarding interface for a space battle game. You will be provided
+access to a set fo Invision design files with the layout of the interface. All assets are already
+in place in the battle-app package.
 
-This project was generated using [Nx](https://nx.dev).
+Design link - https://craftcreate.invisionapp.com/overview/Developer-Test-Project-cl8x3p1eu00fh016h1r9h12ps/screens?sortBy=1&sortOrder=1&viewLayout=2
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+### Requirements
+- Styling - All styling must be done using styled-jsx. See Index.tsx for an example.
+- TypeScript - All code must be written in TypeScript.
+- Data Driven - Use the Questions API to retrieve the content for the questions displayed. A variable amount questions should be accounted for.  See Index.tsx for an example.
+- Response Submissions - The answers selected by the user should be collected and POSTed to the Questions endpoint when the user presses the "Let's rock n' roll" button at the end of onboarding.
+- Minimal Decencies - You are not permitted to install any additional npm packages.
+- Animations - The transition between questions should be animated
+- Responsiveness - The interface must be responsive. The provided Invision design is laid out for desktop. It is your responsibility to adjust to layout for mobile devices. Falling back to a vertically stacked layout is preferred.
 
-🔎 **Smart, Fast and Extensible Build System**
+## Setup
+``` sh
+# Create a new branch
+git checkout -b exam-{YOUR_NAME}
 
-## Adding capabilities to your workspace
+# Install deps
+npm i
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+# Start NextJS dev server 
+# The server runs on port 4200 - http://localhost:4200 
+npx nx run battle-app:serve
+```
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+## Project Structure
+This project is setup as a mono-repo using NX workspaces. Related functionality is separated into packages 
+located in the /packages directory.
 
-Below are our core plugins:
+``` txt
+/packages
+  |
+  + -- api-func        # An AWS lambda function the implements the Questions API
+  |
+  + -- battle-app      # A NextJS app where you will build a survey
+  |
+  + -- battle-app-e2e  # An end-to-end testing project to test the battle-app package
+  |
+  + -- cdk             # A AWS CDK project used to deploy AWS resources
+  |
+  + -- common          # A TypeScript library that contains common types and functions
 
-- [React](https://reactjs.org)
-  - `npm install --save-dev @nrwl/react`
-- Web (no framework frontends)
-  - `npm install --save-dev @nrwl/web`
-- [Angular](https://angular.io)
-  - `npm install --save-dev @nrwl/angular`
-- [Nest](https://nestjs.com)
-  - `npm install --save-dev @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `npm install --save-dev @nrwl/express`
-- [Node](https://nodejs.org)
-  - `npm install --save-dev @nrwl/node`
+```
 
-There are also many [community plugins](https://nx.dev/community) you could add.
+## Recommended Extensions
+- styled-jsx - Provides css syntax highlighting in styled-jsx blocks
+- Nx Console - Allows you to view and run all NX commands
 
-## Generate an application
-
-Run `nx g @nrwl/react:app my-app` to generate an application.
-
-> You can use any of the plugins above to generate applications as well.
-
-When using Nx, you can create multiple applications and libraries in the same workspace.
-
-## Generate a library
-
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
-
-> You can also use any of the plugins above to generate libraries as well.
-
-Libraries are shareable across libraries and applications. They can be imported from `@battle-time/mylib`.
-
-## Development server
-
-Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `nx e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-
-
-## ☁ Nx Cloud
-
-### Distributed Computation Caching & Distributed Task Execution
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
