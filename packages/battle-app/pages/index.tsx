@@ -27,6 +27,9 @@ export function Index() {
 
             <h1>Battle Time 🥳</h1>
 
+
+            <p>The source for this page is located at - packages/battle-app/pages/index.tsx</p>
+
             <BarsIcon/>
 
             <Logo/>
@@ -43,7 +46,11 @@ export function Index() {
                     gap:20px;
                 }
                 h1{
-                    color:#9A4264;
+                    color:#4EAF90;
+                    margin:40px 0 0 0
+                }
+                p{
+                    margin:0;
                 }
                 img{
                     width:50vw;

@@ -7,6 +7,7 @@ export default function GlobalStyles()
                 padding:0;
             }
             body{
+                font-family:Courier New;
                 background-color:#000;
                 color:#fff;
             }
