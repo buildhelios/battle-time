@@ -6,11 +6,12 @@ Your assignment is to build an onboarding interface for a space battle game. You
 access to a set fo Invision design files with the layout of the interface. All assets are already
 in place in the battle-app package.
 
-Design link - https://craftcreate.invisionapp.com/overview/Developer-Test-Project-cl8x3p1eu00fh016h1r9h12ps/screens?sortBy=1&sortOrder=1&viewLayout=2
+Design link - https://craftcreate.invisionapp.com/console/share/3P7SAUVRTHD
 
 ### Requirements
 - Styling - All styling must be done using styled-jsx. See Index.tsx for an example.
 - TypeScript - All code must be written in TypeScript.
+- Components - All React components must be functional components.
 - Data Driven - Use the Questions API to retrieve the content for the questions displayed. A variable amount questions should be accounted for.  See Index.tsx for an example.
 - Response Submissions - The answers selected by the user should be collected and POSTed to the Questions endpoint when the user presses the "Let's rock n' roll" button at the end of onboarding.
 - Minimal Decencies - You are not permitted to install any additional npm packages.
