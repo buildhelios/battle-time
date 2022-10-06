@@ -21,17 +21,17 @@ export default function Logo()
                     </feMerge>
                 </filter>
                 <linearGradient x1="50%" y1="-3.06161713e-15%" x2="50%" y2="100%" id="linearGradient-3">
-                    <stop stop-color="#1A1D1F" stop-opacity="0.75" offset="0%"></stop>
-                    <stop stop-color="#1A1D1F" offset="100%"></stop>
+                    <stop stopColor="#1A1D1F" stopOpacity="0.75" offset="0%"></stop>
+                    <stop stopColor="#1A1D1F" offset="100%"></stop>
                 </linearGradient>
             </defs>
-            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <g id="6a_Battle_Ready" transform="translate(-696.000000, -25.000000)" fill-rule="nonzero">
+            <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+                <g id="6a_Battle_Ready" transform="translate(-696.000000, -25.000000)" fillRule="nonzero">
                     <g id="global/header" transform="translate(60.000000, 25.000000)">
                         <g id="Logo" transform="translate(636.000000, 0.000000)">
                             <g id="Polygon-1">
                                 <use fill="#FCFCFC" xlinkHref="#path-1"></use>
-                                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlinkHref="#path-1"></use>
+                                <use fill="black" fillOpacity="1" filter="url(#filter-2)" xlinkHref="#path-1"></use>
                             </g>
                             <rect id="Rectangle-3" fill="#1A1D1F" x="22" y="18" width="4" height="12" rx="2"></rect>
                             <rect id="Rectangle-4" fill="url(#linearGradient-3)" x="14" y="20" width="4" height="8" rx="2"></rect>
