@@ -26,6 +26,9 @@
         },
         "lint": {
             "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+        },
+        "e2e": {
+            "inputs": ["default", "^production"]
         }
     },
     "namedInputs": {
@@ -37,11 +40,24 @@
             "!{projectRoot}/jest.config.[jt]s",
             "!{projectRoot}/.eslintrc.json"
         ],
-        "sharedGlobals": []
+        "sharedGlobals": ["{workspaceRoot}/babel.config.json"]
     },
     "workspaceLayout": {
         "appsDir": "packages",
         "libsDir": "packages"
     },
-    "defaultProject": "api-func"
+    "defaultProject": "api-func",
+    "generators": {
+        "@nrwl/react": {
+            "application": {
+                "babel": true
+            }
+        },
+        "@nrwl/next": {
+            "application": {
+                "style": "scss",
+                "linter": "eslint"
+            }
+        }
+    }
 }
