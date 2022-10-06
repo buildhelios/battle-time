@@ -10,6 +10,7 @@ Design link - https://craftcreate.invisionapp.com/console/share/3P7SAUVRTHD
 
 ### Requirements
 - Styling - All styling must be done using styled-jsx. See Index.tsx for an example.
+- Layout - All layout should be done using either flex box or grid layouts.
 - TypeScript - All code must be written in TypeScript.
 - Components - All React components must be functional components.
 - Data Driven - Use the Questions API to retrieve the content for the questions displayed. A variable amount questions should be accounted for.  See Index.tsx for an example.

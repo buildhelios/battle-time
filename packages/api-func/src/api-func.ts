@@ -1,17 +1,17 @@
 import { Answer, isAnswer } from "@battle-time/common";
 import { APIGatewayEventRequestContextV2, APIGatewayProxyEventV2WithRequestContext } from "aws-lambda";
 import { createResponse } from "./lib";
-import { apiQuestions } from "./questions";
+import { mockQuestions } from "./questions";
 
 export async function handler(evt:APIGatewayProxyEventV2WithRequestContext<APIGatewayEventRequestContextV2>){
 
-    const body=evt.body?JSON.parse(evt.body):undefined;
+    const body=evt.body?.trim()?JSON.parse(evt.body):undefined;
     const path=`${evt.requestContext.http.method}:${evt.requestContext.http.path}`;
 
     switch(path){
 
         case 'GET:/questions':
-            return createResponse(200,apiQuestions);
+            return createResponse(200,mockQuestions);
 
         case 'POST:/questions':{
             const answers:Answer[]=body;

@@ -1,6 +1,6 @@
 import { Question } from "@battle-time/common";
 
-export const apiQuestions:Question[]=[
+export const mockQuestions:Question[]=[
 
     {
 
