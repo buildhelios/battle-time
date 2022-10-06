@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {},
   "private": true,
-  "dependencies": {},
   "devDependencies": {
+    "@iyio/nx-cdk": "^0.0.3",
     "@nrwl/cli": "14.8.3",
     "@nrwl/js": "14.8.3",
     "@nrwl/workspace": "14.8.3",
