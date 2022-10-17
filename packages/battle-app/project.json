@@ -4,7 +4,7 @@
     "sourceRoot": "packages/battle-app",
     "projectType": "application",
     "targets": {
-        "build": {
+        "pre-build": {
             "executor": "@nrwl/next:build",
             "outputs": ["{options.outputPath}"],
             "defaultConfiguration": "production",
@@ -37,10 +37,10 @@
                 }
             }
         },
-        "export": {
+        "build": {
             "executor": "@nrwl/next:export",
             "options": {
-                "buildTarget": "battle-app:build:production"
+                "buildTarget": "battle-app:pre-build:production"
             }
         },
         "test": {

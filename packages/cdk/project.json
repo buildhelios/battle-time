@@ -58,6 +58,7 @@
     },
     "tags": [],
     "implicitDependencies": [
-        "api-func"
+        "api-func",
+        "battle-app"
     ]
 }
