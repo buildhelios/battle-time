@@ -23,16 +23,16 @@
             "executor": "@nrwl/next:server",
             "defaultConfiguration": "development",
             "options": {
-                "buildTarget": "battle-app:build",
+                "buildTarget": "battle-app:pre-build",
                 "dev": true
             },
             "configurations": {
                 "development": {
-                    "buildTarget": "battle-app:build:development",
+                    "buildTarget": "battle-app:pre-build:development",
                     "dev": true
                 },
                 "production": {
-                    "buildTarget": "battle-app:build:production",
+                    "buildTarget": "battle-app:pre-build:production",
                     "dev": false
                 }
             }
