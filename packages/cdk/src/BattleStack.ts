@@ -34,7 +34,14 @@ export class BattleStack extends cdk.Stack {
 
         if(createPublicUrl){
             const url = func.addFunctionUrl({
-                authType:lambda.FunctionUrlAuthType.NONE
+                authType:lambda.FunctionUrlAuthType.NONE,
+                cors:{
+                    allowCredentials:true,
+                    allowedHeaders:['*'],
+                    allowedMethods:[lambda.HttpMethod.ALL],
+                    allowedOrigins:['*'],
+                    maxAge:cdk.Duration.days(1),
+                }
             });
             url.grantInvokeUrl(new iam.AnyPrincipal());
             new cdk.CfnOutput(this, "funcUrl00" + name, { value: url.url });
