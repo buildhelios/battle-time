@@ -9,7 +9,7 @@ const getId=(id:string,branch:string)=>{
     if(branch==='main'){
         return id;
     }
-    return id+'_'+branch;
+    return id+'00'+branch;
 }
 
 export class BattleStack extends cdk.Stack {

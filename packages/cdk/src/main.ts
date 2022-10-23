@@ -8,7 +8,7 @@ let branch:string = app.node.tryGetContext('git_branch');
 if(!branch){
     throw new Error('git_branch context variable required')
 }
-branch=branch.replace(/\W/g,'_');
+branch=branch.replace(/\W/g,'00');
 
 new BattleStack(app, 'Battle', branch, {
     /* If you don't specify 'env', this stack will be environment-agnostic.
