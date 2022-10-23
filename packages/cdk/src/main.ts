@@ -4,7 +4,13 @@ import 'source-map-support/register';
 import { BattleStack } from './BattleStack';
 
 const app = new cdk.App();
-new BattleStack(app, 'Battle', {
+let branch:string = app.node.tryGetContext('git_branch');
+if(!branch){
+    throw new Error('git_branch context variable required')
+}
+branch=branch.replace(/\W/g,'_');
+
+new BattleStack(app, 'Battle', branch, {
     /* If you don't specify 'env', this stack will be environment-agnostic.
      * Account/Region-dependent features and context lookups will not work,
      * but a single synthesized template can be deployed anywhere. */
