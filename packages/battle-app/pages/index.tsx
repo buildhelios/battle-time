@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { BarsIcon } from "../components/BarsIcon";
 import Logo from '../components/Logo';
 
-export function Index() {
+export default function Index() {
 
     useEffect(()=>{
         let m=true;
@@ -62,4 +62,3 @@ export function Index() {
     );
 }
 
-export default Index;
