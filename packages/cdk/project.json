@@ -13,7 +13,20 @@
             "executor": "nx:run-commands",
             "options": {
                 "cwd": "packages/cdk",
-                "command": "cdk deploy"
+                "command": "cdk deploy -c git_branch=$(git rev-parse --abbrev-ref HEAD)"
+            }
+        },
+        "diff": {
+            "dependsOn": [
+                {
+                    "target": "build",
+                    "projects": "dependencies"
+                }
+            ],
+            "executor": "nx:run-commands",
+            "options": {
+                "cwd": "packages/cdk",
+                "command": "cdk diff -c git_branch=$(git rev-parse --abbrev-ref HEAD)"
             }
         },
         "synth": {
@@ -26,7 +39,7 @@
             "executor": "nx:run-commands",
             "options": {
                 "cwd": "packages/cdk",
-                "command": "cdk synth"
+                "command": "cdk synth -c git_branch=$(git rev-parse --abbrev-ref HEAD)"
             }
         },
         "bootstrap": {
@@ -39,7 +52,7 @@
             "executor": "nx:run-commands",
             "options": {
                 "cwd": "packages/cdk",
-                "command": "cdk bootstrap"
+                "command": "cdk bootstrap -c git_branch=$(git rev-parse --abbrev-ref HEAD)"
             }
         },
         "destroy": {
@@ -52,7 +65,7 @@
             "executor": "nx:run-commands",
             "options": {
                 "cwd": "packages/cdk",
-                "command": "cdk destroy"
+                "command": "cdk destroy -c git_branch=$(git rev-parse --abbrev-ref HEAD)"
             }
         }
     },
