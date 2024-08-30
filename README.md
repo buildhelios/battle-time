@@ -3,10 +3,12 @@
 
 ## Assignment
 Your assignment is to build an onboarding interface for a space battle game. You will be provided
-access to a set of Invision design files with the layout of the interface. All assets are already
+access to a set of Sketch design files with the layout of the interface. All assets are already
 in place in the battle-app package.
 
-Design link - https://craftcreate.invisionapp.com/console/share/3P7SAUVRTHD
+Design links:
+- Sketch - https://www.sketch.com/s/ca289839-db58-45bf-adb7-559c3d71154b
+- Invision - https://craftcreate.invisionapp.com/console/share/3P7SAUVRTHD
 
 ## Requirements
 - Styling - All styling must be done using [at-dot-css](https://www.npmjs.com/package/@iyio/at-dot-css). See Index.tsx for an example.
@@ -17,7 +19,7 @@ Design link - https://craftcreate.invisionapp.com/console/share/3P7SAUVRTHD
 - Response Submissions - The answers selected by the user should be collected and POSTed to the Questions endpoint when the user presses the "Let's rock n' roll" button at the end of onboarding. The URL to the Questions endpoint is stored in the `apiBaseUrl` variable in the `@battle-time/common` package.
 - Minimal Decencies - You are not permitted to install any additional npm packages.
 - Animations - The transition between questions should be animated
-- Responsiveness - The interface must be responsive. The provided Invision design is laid out for desktop. It is your responsibility to adjust the layout for mobile devices. Falling back to a vertically stacked layout is preferred.
+- Responsiveness - The interface must be responsive. The provided Sketch design is laid out for desktop. It is your responsibility to adjust the layout for mobile devices. Falling back to a vertically stacked layout is preferred.
 - Usage of at least 1 behavior subject for storing global app state. See the "tip of the day" in index.tsx for an example.
 
 ## Setup
