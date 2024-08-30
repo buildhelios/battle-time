@@ -1,4 +1,4 @@
-export const apiBaseUrl=process.env['NX_API_BASE_URL']??'[!!NX_API_BASE_URL env var not set!!]';
+export const apiBaseUrl=process.env['NEXT_PUBLIC_API_BASE_URL']??'[!!NEXT_PUBLIC_API_BASE_URL env var not set!!]';
 
 export interface Question
 {
