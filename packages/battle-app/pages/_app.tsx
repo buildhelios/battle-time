@@ -1,19 +1,17 @@
+import { NextJsApp } from '@iyio/nextjs-common';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import GlobalStyles from '../components/GlobalStyles';
+import { GlobalStyles } from '../components/GlobalStyles';
 
-function CustomApp({ Component, pageProps }: AppProps) {
+export default function App({env,...props}:AppProps&{env:Record<string,string>}){
     return (
-        <>
+        <NextJsApp
+            appProps={props as any}
+            GlobalStyle={GlobalStyles}
+        >
             <Head>
                 <title>Battle Time 🥳</title>
             </Head>
-            <main className="app">
-                <Component {...pageProps} />
-            </main>
-            <GlobalStyles/>
-        </>
+        </NextJsApp>
     );
 }
-
-export default CustomApp;
