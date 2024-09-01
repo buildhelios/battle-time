@@ -16,7 +16,6 @@ interface QuestionScreenProps {
 }
 
 function ProgressIndicator({ currentIndex, total }: { currentIndex: number; total: number }) {
-    console.log('ProgressIndicator', currentIndex, total);
     return (
         <div className={style.progressContainer()}>
             {Array.from({ length: total }).map((_, index) => (
