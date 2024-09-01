@@ -157,4 +157,24 @@ const style = atDotCss({
         background-color: #6c757d;
         cursor: not-allowed;
     }
+
+        @media (max-width: 768px) {
+        @.container {
+            flex-direction: column;
+            align-items: center;
+            text-align: start;
+            padding: 20px;
+            min-height: 80vh;
+        }
+
+        @.content{
+            max-width: 100%;
+        }
+            @.image {
+            display: none;
+        }
+        @.optionsContainer {
+            grid-template-columns: 1fr;
+        }
+    }
 `});

@@ -75,4 +75,19 @@ const style = atDotCss({
         justify-content: center;
         align-items: center;
     }
+
+    @media (max-width: 768px) {
+        @.cardDefault {
+            padding: 10px;
+        }
+        @.cardSelected {
+            padding: 10px;
+        }
+        @.title {
+            font-size: 1.25rem;
+        }
+        @.description {
+            font-size: 0.875rem;
+        }
+    }
 `});
