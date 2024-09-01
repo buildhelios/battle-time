@@ -64,13 +64,13 @@ const style = atDotCss({
         position: absolute;
         top: 10px;
         right: 10px;
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
         background-color: #007bff;
         color: white;
         border-radius: 50%;
         padding: 5px;
-        font-size: 1rem;
+        font-size: 0.8rem;
         display: flex;
         justify-content: center;
         align-items: center;
