@@ -10,7 +10,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     return (
         <div className={style.root_layout()}>
             <Header />
-            <main className={style.root_layout__main()}>
+            <main className={style.main()}>
                 {children}
             </main>
             <Footer />
@@ -24,10 +24,10 @@ const style = atDotCss({
         display: flex;
         flex-direction: column;
         height: 100vh;
+        padding: 20px 25px;
     }
 
-    @.root_layout__main {
+    @.main {
         flex: 1;
-        padding: 20px;
     }
 ` });
